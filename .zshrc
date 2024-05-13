@@ -5,7 +5,7 @@ SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep
 # bindkey -v
-
+stty -ixon
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/tijme/.zshrc'
@@ -32,6 +32,8 @@ alias alert="curl -H \"Title: Alert\" -H \"Tags: warning\" https://tijmevh.nl:80
 # make a keybind (ctrl + z) to execute fg
 bindkey -s '^Z' 'fg'
 
+bindkey -s '^S' 'sesh connect $(sesh list | fzf)'
+
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
@@ -42,6 +44,9 @@ eval "$(zoxide init zsh)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Add go bin to path
+export PATH=$PATH:~/go/bin
 
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
