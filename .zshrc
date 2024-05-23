@@ -14,6 +14,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Add go bin to path
+export PATH=$PATH:~/go/bin
+export PATH=$PATH:~/.local/bin
+
 # Allow ctrl arrow
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -45,8 +49,9 @@ eval "$(zoxide init zsh)"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Add go bin to path
-export PATH=$PATH:~/go/bin
-
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

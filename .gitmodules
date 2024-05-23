@@ -1,9 +1,9 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = https://github.com/7ijme/nvim
+	url = ssh@github.com/7ijme/nvim.git
 [submodule ".config/starship"]
 	path = .config/starship
-	url = https://github.com/7ijme/starship
+	url = git@github.com/7ijme/starship.git
 [submodule ".config/fish"]
 	path = .config/fish
-	url = https://github.com/7ijme/fish
+	url = git@github.com/7ijme/fish.git
