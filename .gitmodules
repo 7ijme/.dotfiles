@@ -1,9 +1,24 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = ssh@github.com/7ijme/nvim.git
+	url = git@github.com:7ijme/nvim.git
 [submodule ".config/starship"]
 	path = .config/starship
-	url = git@github.com/7ijme/starship.git
+	url = git@github.com:7ijme/starship.git
 [submodule ".config/fish"]
 	path = .config/fish
-	url = git@github.com/7ijme/fish.git
+	url = git@github.com:7ijme/fish.git
+[submodule ".config/tmux/plugins/t-smart-tmux-session-manager"]
+	path = .config/tmux/plugins/t-smart-tmux-session-manager
+	url = https://github.com/joshmedeski/t-smart-tmux-session-manager.git
+[submodule ".config/tmux/plugins/tmux-onedark-theme"]
+	path = .config/tmux/plugins/tmux-onedark-theme
+	url = git@github.com:7ijme/tmux-onedark-theme.git
+[submodule ".config/tmux/plugins/tmux-sensible"]
+	path = .config/tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule ".config/tmux/plugins/vim-tmux-navigator"]
+	path = .config/tmux/plugins/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
