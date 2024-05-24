@@ -19,3 +19,4 @@ picom --config ~/.config/picom/picom.conf &
 nitrogen --restore &
 dunst &
 polybar &
+ffplay -nodisp -autoexit ~/.local/media/startup.wav &

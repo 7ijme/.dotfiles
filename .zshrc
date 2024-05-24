@@ -29,6 +29,7 @@ alias la='exa -la'
 # More useful aliases
 alias n="nvim"
 alias img="sxiv"
+alias cppng="xclip -t image/png -selection clipboard -i"
 
 #ntfy
 alias alert="curl -H \"Title: Alert\" -H \"Tags: warning\" https://tijmevh.nl:8080/alert -d \"Done with the command!\""
