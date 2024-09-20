@@ -1,8 +1,19 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+dp=$(xrandr -q | grep '^DP-[0-9]-[0-9] connected' | sed -s 's/^\(DP-[0-9]-[0-9]\).*/\1/')
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output $dp --mode 1920x1080 --rotate normal --left-of eDP-1
+xinput disable $(xinput | grep Touchpad | sed "s/.*id=\([0-9]\+\).*/\1/")
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pkill polybar
+
+#bscp monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc wm -O eDP-1 $dp
+bspc monitor eDP-1 -d 1 2 3
+bspc monitor $dp -d 4 5 6
+#bspc monitor eDP-1 -d 1 3 5 7 9
+#bspc monitor DP-1-1 -d 2 4 6 8 10
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -14,9 +25,8 @@ bspc config gapless_monocle      true
 bspc config directional_focus_tightness low
 
 #AutoStart applications
-sxhkd &
 picom --config ~/.config/picom/picom.conf &
 nitrogen --restore &
 dunst &
 polybar &
-ffplay -nodisp -autoexit ~/.local/media/startup.wav &
+feh --bg-scale ~/Pictures/bg.png &

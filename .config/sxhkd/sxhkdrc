@@ -128,15 +128,3 @@ XF86AudioRaiseVolume
 XF86AudioMute
     pamixer -t
 
-# Brightness
-XF86MonBrightnessDown
-	xbacklight -dec 5
-XF86MonBrightnessUp
-	xbacklight -inc 5
-
-
-# Screenshot (coreshot)
-Print
-	coreshot -f
-Print + shift
-	coreshot -s
