@@ -59,7 +59,7 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
+super + {p,b,semicolon,apostrophe}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
@@ -121,10 +121,42 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #Volume Control
-XF86AudioLowerVolume
-	pamixer -d 5
-XF86AudioRaiseVolume
-	pamixer -i 5
-XF86AudioMute
-    pamixer -t
+F6
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+	# pamixer -d 5
+F7
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
+F8
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Brightness
+F9
+	brightnessctl s 5%-
+F10
+	brightnessctl s +5%
+
+
+# Screenshot 
+Print
+	escrotum -x $(xdotool getwindowfocus) '/home/tijme/Pictures/Screenshots/scrot%Y-%m-%d-%H%M%S.png'
+
+ctrl + Print
+	escrotum -x $(xdotool getwindowfocus) -C '/home/tijme/Pictures/Screenshots/scrot%Y-%m-%d-%H%M%S.png'
+
+
+ctrl + shift + Print
+	escrotum -C -s '/home/tijme/Pictures/Screenshots/scrot%Y-%m-%d-%H%M%S.png'
+
+
+shift + Print
+	escrotum -s '/home/tijme/Pictures/Screenshots/scrot%Y-%m-%d-%H%M%S.png'
+
+super + period
+	rofimoji
+
+# setxkbmap "us","us(intl)"
+super + space
+	xkb-switch -n
+
+super + v
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' ; xdotool key Shift+Insert

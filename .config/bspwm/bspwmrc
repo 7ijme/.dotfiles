@@ -30,3 +30,7 @@ nitrogen --restore &
 dunst &
 polybar &
 feh --bg-scale ~/Pictures/bg.png &
+xautolock -time 12 -locker "xlock -mode rain" -detectsleep & 
+xsetroot -cursor_name left_ptr
+greenclip daemon &
+setxkbmap "us","us(intl)"
