@@ -50,9 +50,22 @@ window#waybar.chromium {
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button.empty {
+	background-color: #000;
+}
+
+#workspaces button:not(.empty) {
+	background-color: #222;
+}
+
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.9);
     box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.active {
+    background-color: #64727D;
+    /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 #workspaces button.focused {
@@ -64,8 +77,15 @@ window#waybar.chromium {
     background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727D;
+#custom-power {
+	background-color: #222;
+	padding: 0 13px 0 10px;
+	margin: 0 10px 0 0;
+	color: #ffffff;
+}
+
+#submap {
+    background-color: #222;
     /* border-bottom: 3px solid #ffffff; */
 }
 
@@ -83,7 +103,7 @@ window#waybar.chromium {
 #idle_inhibitor,
 #mpd {
     padding: 0 10px;
-    margin: 6px 3px; 
+    margin: 0px 3px; 
     color: #000000;
 }
 
@@ -103,18 +123,18 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #000000;
+    background-color: #222;
     color: white;
 }
 
 #battery {
-    background-color: #000000;
+    background-color: #222;
     color: white;
 }
 
 #battery.charging {
     color: #ffffff;
-    background-color: #000000;
+    background-color: #222;
 }
 
 @keyframes blink {
@@ -135,26 +155,26 @@ window#waybar.chromium {
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: #222;
 }
 
 #cpu {
-    background-color: #000000;
+    background-color: #222;
     color: #ffffff;
 }
 
 #memory {
-    background-color: #000000;
+    background-color: #222;
     color: white;
 }
 
 #backlight {
-    background-color: #000000;
+    background-color: #222;
     color:white;
 }
 
 #network {
-    background-color: #000000;
+    background-color: #222;
     color:white;
 
 }
@@ -164,19 +184,21 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #000000;
+    background-color: #222;
     color: #ffffff;
 }
 
 #pulseaudio.muted {
-    background-color: #000000;
+    background-color: #222;
     color: #ffffff;
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: #222;
+    color: #fff;
     min-width: 100px;
+	padding: 0 10px;
+	margin: 0 3px;
 }
 
 #custom-media.custom-spotify {

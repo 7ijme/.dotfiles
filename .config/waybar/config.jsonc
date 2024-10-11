@@ -6,9 +6,17 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
 	"output": "eDP-1",
-    "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/media"],
+    "modules-left": ["custom/power", "hyprland/workspaces", "hyprland/submap", "custom/media"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "network", "brightnessctl","cpu","memory","battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["hyprland/language", "pulseaudio", "network", "backlight", "cpu","memory","battery", "clock", "tray"],
+	"custom/power": {
+		"format": "",  // This can be any icon, like a power icon from Font Awesome
+		// "exec": "~/.config/waybar/scripts/power_menu.sh",
+		"tooltip": "Power Menu",
+		"on-click": "~/.config/waybar/powermenu.sh",
+		// "interval": 3600  // Set to a high number, as we don't need to refresh frequently
+
+	},
 	"hyprland/workspaces": {
 		"disable-sc": true,
 		"persistent-workspaces": {
@@ -19,6 +27,16 @@
 			"5": "eDP-1",
 			"6": "eDP-1"
 		}
+	},
+	"hyprland/submap": {
+		"format": "✌️ {}",
+		"max-length": 8,
+		"tooltip": false
+	},
+	"hyprland/language":{
+		"format": "{layout} yoo",
+		"keyboard-name": "at-translated-set-2-keyboard"
+
 	},
     // Modules configuration
     // "sway/workspaces": {
@@ -77,16 +95,16 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%I:%M }",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M } ",
+        "format-alt": "{:%d-%m-%Y} "
       
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "{usage}% ",
+        "tooltip": true
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -98,8 +116,9 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% ",
-        "format-icons": ["", ""]
+        "format": "{percent}% {icon}",
+        // "format-icons": ["", ""]
+		"format-icons": ["", "", "", "", "","", "", "", "","", "","", ""]
     },
     "battery": {
         "states": {
@@ -107,28 +126,25 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% ",
-        "format-charging": "{capacity}%",
-        "format-plugged": "{capacity}%",
+        "format": "{capacity}% {icon}",
+        // "format-charging": "{capacity}%",
+        // "format-plugged": "{capacity}%",
         "format-alt": "{time} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        // "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
+        "format-icons": ["", "", "", "", ""]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "Disconnected "
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}%  {format_source}",
+        "format": "{volume}%    {format_source}",
         "format-bluetooth": "{volume}%  {format_source}",
         "format-bluetooth-muted": " {format_source}",
         "format-muted": " {format_source}",
@@ -137,7 +153,7 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
-        "format": " {}",
+        "format": "{}",
         "return-type": "json",
         "max-length": 40,
         "escape": true,
