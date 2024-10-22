@@ -8,7 +8,7 @@
 	"output": "eDP-1",
     "modules-left": ["custom/power", "hyprland/workspaces", "hyprland/submap", "custom/media"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["hyprland/language", "pulseaudio", "network", "backlight", "cpu","memory","battery", "clock", "tray"],
+    "modules-right": ["hyprland/language", "pulseaudio", "network", "backlight", "cpu","memory","custom/swayidle", "battery", "clock", "tray"],
 	"custom/power": {
 		"format": "",  // This can be any icon, like a power icon from Font Awesome
 		// "exec": "~/.config/waybar/scripts/power_menu.sh",
@@ -16,6 +16,13 @@
 		"on-click": "~/.config/waybar/powermenu.sh",
 		// "interval": 3600  // Set to a high number, as we don't need to refresh frequently
 
+	},
+	"custom/swayidle": {
+	  "exec": "~/.config/waybar/swayidle-status.sh",
+	  "interval": 1,
+	  "on-click": "hyprlock",
+	  "on-click-right": "~/.config/waybar/swayidle-toggle.sh",
+	  "tooltip": false
 	},
 	"hyprland/workspaces": {
 		"disable-sc": true,
