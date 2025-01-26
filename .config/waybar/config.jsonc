@@ -134,7 +134,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        // "format-charging": "{capacity}%",
+        "format-charging": "{capacity}% " , 
         // "format-plugged": "{capacity}%",
         "format-alt": "{time} ",
         // "format-good": "", // An empty format will hide the module
@@ -151,10 +151,12 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
+		// "on-scroll-up": "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -1%",
+		// "on-scroll-down": "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +1%",
         "format": "{volume}%    {format_source}",
-        "format-bluetooth": "{volume}%  {format_source}",
-        "format-bluetooth-muted": " {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth": "{volume}% 󰂯 {format_source}",
+        "format-bluetooth-muted": "0% 󰂯 {format_source}",
+        "format-muted": "0% 󰝟   {format_source} ",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "on-click": "pavucontrol"

@@ -2,9 +2,8 @@
 # swayidle -w timeout 60 "hyprlock" 
 # swayidle -w timeout 600 "hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on"
 
-if pgrep -x "swayidle" > /dev/null; then
-	pkill swayidle
+if pgrep -x "hypridle" > /dev/null; then
+	pkill hypridle
 else
-	hyprctl dispatch exec 'swayidle -w timeout 60 "hyprlock"'
-	hyprctl dispatch exec 'swayidle -w timeout 600 "hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on"'
+	hyprctl dispatch exec hypridle
 fi
