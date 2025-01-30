@@ -10,7 +10,7 @@
     "modules-center": ["hyprland/window"],
     "modules-right": ["hyprland/language", "pulseaudio", "network", "backlight", "cpu","memory","custom/swayidle", "battery", "clock", "tray"],
 	"custom/power": {
-		"format": "",  // This can be any icon, like a power icon from Font Awesome
+		"format": "⏻",  // This can be any icon, like a power icon from Font Awesome
 		// "exec": "~/.config/waybar/scripts/power_menu.sh",
 		"tooltip": "Power Menu",
 		"on-click": "~/.config/waybar/powermenu.sh",
@@ -102,7 +102,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%H:%M } ",
+        "format": "{:%H:%M } ",
         "format-alt": "{:%d-%m-%Y} "
       
     },
