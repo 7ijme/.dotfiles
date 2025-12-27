@@ -3,10 +3,10 @@ font-family = CaskaydiaCove Nerd Font
 font-family = Apple Color Emoji
 font-size = 16
 
-# window-inherit-working-directory = true
+working-directory = home
 
 background-opacity = 0.8
-theme = OneHalfDark
+theme = Atom One Dark
 cursor-style = block
 cursor-style-blink = false
 
